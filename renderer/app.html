@@ -1,12 +1,13 @@
 <template>
   <require from="./app.css"></require>
-	<nav class="navbar is-fixed-bottom is-dark" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-bottom is-dark" role="navigation" aria-label="main navigation">
     <a class="navbar-item">
       <img src="/images/mandadin.png">&nbsp;<b class="has-text-primary is-size-5">AuExplorer</b>
     </a>
-		<section class="navbar-brand">
-			<a role="button" class="navbar-burger${ menuOpen ? ' is-active': '' }" aria-label="menu" aria-expanded="false" click.delegate="toggleMenu()">
-				<span aria-hidden="true"></span>
+    <section class="navbar-brand">
+      <a role="button" class="navbar-burger${ menuOpen ? ' is-active': '' }" aria-label="menu" aria-expanded="false"
+        click.delegate="toggleMenu()">
+        <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
@@ -19,7 +20,7 @@
       </section>
     </menu>
   </nav>
-  <main class="container">
+  <main>
     <router-view></router-view>
   </main>
 </template>
