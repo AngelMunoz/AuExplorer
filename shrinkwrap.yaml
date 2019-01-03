@@ -1,13 +1,23 @@
 dependencies:
+  '@fortawesome/fontawesome-free': 5.6.3
   aurelia-script: 1.3.0
   bulma: 0.7.2
+  convert-units: 2.3.4
+  dayjs: 1.7.8
   koa: 2.6.2
   koa-static: 5.0.0
   localforage: 1.7.3
+  opn: 5.4.0
 devDependencies:
   '@types/node': 10.12.18
   electron: 3.0.13
 packages:
+  /@fortawesome/fontawesome-free/5.6.3:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-s5PLdI9NYgjBvfrv6rhirPHlAHWx+Sfo/IjsAeiXYfmemC/GSjwsyz1wLnGPazbLPXWfk62ks980o9AmsxYUEQ==
   /@types/node/10.12.18:
     dev: true
     resolution:
@@ -173,6 +183,13 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
+  /convert-units/2.3.4:
+    dependencies:
+      lodash.foreach: 2.3.0
+      lodash.keys: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha512-ERHfdA0UhHJp1IpwE6PnFJx8LqG7B1ZjJ20UvVCmopEnVCfER68Tbe3kvN63dLbYXDA2xFWRE6zd4Wsf0w7POg==
   /cookies/0.7.3:
     dependencies:
       depd: 1.1.2
@@ -202,6 +219,10 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
+  /dayjs/1.7.8:
+    dev: false
+    resolution:
+      integrity: sha512-Gp4Y5KWeSri0QOWGzHQz7VrKDkfEpS92dCLK7P8hYowRFbaym1vj3d6CoHio3apSS4KSi/qb5Edemv26IN5Hfg==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -533,6 +554,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sw2hRCEE0bM2NA6AeX6GXPOffXI=
+  /is-wsl/1.1.0:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
   /isarray/0.0.1:
     dev: true
     resolution:
@@ -683,6 +710,128 @@ packages:
     dev: false
     resolution:
       integrity: sha512-1TulyYfc4udS7ECSBT2vwJksWbkwwTX8BzeUIiq8Y07Riy7bDAAnxDaPU/tWyOVmQAcWJIEIFP9lPfBGqVoPgQ==
+  /lodash._basebind/2.3.0:
+    dependencies:
+      lodash._basecreate: 2.3.0
+      lodash._setbinddata: 2.3.0
+      lodash.isobject: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-K1vEUqDhBhQ7IYafIzvbWHQX0kg=
+  /lodash._basecreate/2.3.0:
+    dependencies:
+      lodash._renative: 2.3.0
+      lodash.isobject: 2.3.0
+      lodash.noop: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-m4ioak3P97fzxh2Dovz8BnHsneA=
+  /lodash._basecreatecallback/2.3.0:
+    dependencies:
+      lodash._setbinddata: 2.3.0
+      lodash.bind: 2.3.0
+      lodash.identity: 2.3.0
+      lodash.support: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-N7KrF1kaM56YjbMln81GAZ16w2I=
+  /lodash._basecreatewrapper/2.3.0:
+    dependencies:
+      lodash._basecreate: 2.3.0
+      lodash._setbinddata: 2.3.0
+      lodash._slice: 2.3.0
+      lodash.isobject: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-qgxhrZYETDkzN2ExSDqXWcNlEkc=
+  /lodash._createwrapper/2.3.0:
+    dependencies:
+      lodash._basebind: 2.3.0
+      lodash._basecreatewrapper: 2.3.0
+      lodash.isfunction: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-0arhEC2t9EDo4G/BM6bt1/4UYHU=
+  /lodash._objecttypes/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-aj6jmH3W7rgCGy1cnDA1Scwrrh4=
+  /lodash._renative/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-d9jt1M7SbdWXH54Vpfdy5OMX+9M=
+  /lodash._setbinddata/2.3.0:
+    dependencies:
+      lodash._renative: 2.3.0
+      lodash.noop: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-5WEEkKzRMnfVmFjZW18nJ/FQjwQ=
+  /lodash._shimkeys/2.3.0:
+    dependencies:
+      lodash._objecttypes: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-YR+TFJ4+bHIQlrSHae8pU3rai6k=
+  /lodash._slice/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-FHGYEyhZly5GgMoppZkshVZpqlw=
+  /lodash.bind/2.3.0:
+    dependencies:
+      lodash._createwrapper: 2.3.0
+      lodash._renative: 2.3.0
+      lodash._slice: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-wqjhi2jl7MFS4rFoJmEW/qWwFsw=
+  /lodash.foreach/2.3.0:
+    dependencies:
+      lodash._basecreatecallback: 2.3.0
+      lodash.forown: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-CDQEyR6EbudyRf3512UZxosq8Wg=
+  /lodash.forown/2.3.0:
+    dependencies:
+      lodash._basecreatecallback: 2.3.0
+      lodash._objecttypes: 2.3.0
+      lodash.keys: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-JPtKr4ANRfwtxgv+w84EyDajrX8=
+  /lodash.identity/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-awGiEMlIU1XCqRO0i2cRIZoXPe0=
+  /lodash.isfunction/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-aylz5HpkfPEucNZ2rqE2Q3BuUmc=
+  /lodash.isobject/2.3.0:
+    dependencies:
+      lodash._objecttypes: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-LhbT/Fg9qYMZaJU/LY5tc0NPZ5k=
+  /lodash.keys/2.3.0:
+    dependencies:
+      lodash._renative: 2.3.0
+      lodash._shimkeys: 2.3.0
+      lodash.isobject: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-s1D0+Syqn0WkouzwGEVM8vKK4lM=
+  /lodash.noop/2.3.0:
+    dev: false
+    resolution:
+      integrity: sha1-MFnWKNUbv5N80qC2/Dp/ISpmnCw=
+  /lodash.support/2.3.0:
+    dependencies:
+      lodash._renative: 2.3.0
+    dev: false
+    resolution:
+      integrity: sha1-fq8DivTw1qq3drRKptz8gDNMm/0=
   /loud-rejection/1.6.0:
     dependencies:
       currently-unhandled: 0.4.1
@@ -825,6 +974,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Kv3oTQPlC5qO3EROMGEKcCle37Q=
+  /opn/5.4.0:
+    dependencies:
+      is-wsl: 1.1.0
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-YF9MNdVy/0qvJvDtunAOzFw9iasOQHpVthTCvGzxt61Il64AYSGdK+rYwld7NAfk9qJ7dt+hymBNSc9LNYS+Sw==
   /parse-json/2.2.0:
     dependencies:
       error-ex: 1.3.2
@@ -1322,10 +1479,14 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@fortawesome/fontawesome-free': ^5.6.3
   '@types/node': 10.12.18
   aurelia-script: 1.3.0
   bulma: 0.7.2
+  convert-units: ^2.3.4
+  dayjs: ^1.7.8
   electron: ^3.0.7
   koa: 2.6.2
   koa-static: 5.0.0
   localforage: ^1.7.3
+  opn: ^5.4.0
