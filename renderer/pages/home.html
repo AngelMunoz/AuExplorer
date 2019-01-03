@@ -1,0 +1,25 @@
+<template>
+	<article>
+		<header class="margin">
+			<input class="input is-primary is-rounded" type="text" placeholder="Path" focus.trigger="onFocus($event)" value.bind="path">
+		</header>
+		<section class="tile is-ancestor padding">
+			<table class="table">
+				<thead>
+					<th>Name</th>
+					<th>Date modified</th>
+					<th>Type</th>
+					<th>Size</th>
+				</thead>
+				<tbody>
+					<tr repeat.for="file of files">
+						<td>${file.filename}</td>
+						<td>${file.mtime}</td>
+						<td>${file.type}</td>
+						<td>${file.size}</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</article>
+</template>

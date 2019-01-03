@@ -1,0 +1,25 @@
+<template>
+  <require from="./app.css"></require>
+	<nav class="navbar is-fixed-bottom is-dark" role="navigation" aria-label="main navigation">
+    <a class="navbar-item">
+      <img src="/images/mandadin.png">&nbsp;<b class="has-text-primary is-size-5">AuExplorer</b>
+    </a>
+		<section class="navbar-brand">
+			<a role="button" class="navbar-burger${ menuOpen ? ' is-active': '' }" aria-label="menu" aria-expanded="false" click.delegate="toggleMenu()">
+				<span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </section>
+    <menu class="navbar-menu${ menuOpen ? ' is-active': '' }">
+      <section class="navbar-start">
+        <a href.bind="nav.href" class="navbar-item ${nav.isActive ? 'active' : ''}" repeat.for="nav of router.navigation">
+          ${nav.title}
+        </a>
+      </section>
+    </menu>
+  </nav>
+  <main class="container">
+    <router-view></router-view>
+  </main>
+</template>

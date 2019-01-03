@@ -1,0 +1,29 @@
+<html lang="en" class="has-navbar-fixed-bottom">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Au Explorer</title>
+  <link rel="stylesheet" href="/bulma/css/bulma.min.css">
+</head>
+
+<body>
+  <script src="/aurelia-script/dist/aurelia_router.umd.js"></script>
+  <script src="/localforage/dist/localforage.js"></script>
+  <script>
+    const aurelia = new au.Aurelia();
+    aurelia
+      .use
+      .standardConfiguration()
+      .developmentLogging();
+    aurelia
+      .start()
+      .then(() => aurelia.setRoot(`app.js`, document.body))
+      .catch(ex => {
+        document.body.textContent = `Bootstrap error: ${ex}`;
+      });
+  </script>
+</body>
+
+</html>
