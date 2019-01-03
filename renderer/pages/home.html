@@ -1,25 +1,33 @@
 <template>
-	<article>
-		<header class="margin">
-			<input class="input is-primary is-rounded" type="text" placeholder="Path" focus.trigger="onFocus($event)" value.bind="path">
-		</header>
-		<section class="tile is-ancestor padding">
-			<table class="table">
-				<thead>
-					<th>Name</th>
-					<th>Date modified</th>
-					<th>Type</th>
-					<th>Size</th>
-				</thead>
-				<tbody>
-					<tr repeat.for="file of files">
-						<td>${file.filename}</td>
-						<td>${file.mtime}</td>
-						<td>${file.type}</td>
-						<td>${file.size}</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-	</article>
+  <require from="value-converters/date.js"></require>
+  <require from="value-converters/rounder.js"></require>
+  <article>
+    <header class="margin flex flex-row">
+      <input class="input is-primary is-rounded margin" type="text" placeholder="Path" focus.trigger="onFocus($event)"
+        value.bind="path" keyup.trigger="onKeyup($event)">
+      <button type="button" class="button is-primary margin" click.delegate="goBack(true)" disabled.bind="!enableBack">
+        <span class="icon">
+          <i class="fas fa-angle-left"></i>
+        </span>
+      </button>
+    </header>
+    <section class="tile is-ancestor padding">
+      <table class="table is-hoverable is-fullwidth">
+        <thead>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Date modified</th>
+          <th>Size</th>
+        </thead>
+        <tbody>
+          <tr repeat.for="row of entries" dblclick.delegate="onOpen(row)">
+            <td>${row.name}</td>
+            <td>${row.type}</td>
+            <td>${row.mtime | date}</td>
+            <td>${row.size.val | rounder}<small>${row.size.unit}</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </article>
 </template>
